@@ -10,6 +10,8 @@ FetchContent_Declare(SFML
     GIT_TAG 2.6.x)
 FetchContent_MakeAvailable(SFML)
 
+file(COPY src/images DESTINATION ${PROJECT_BINARY_DIR})
+
 add_executable(tetris src/main.cpp)
 target_link_libraries(tetris PRIVATE sfml-graphics)
 target_compile_features(tetris PRIVATE cxx_std_17)

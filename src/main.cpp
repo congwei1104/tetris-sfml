@@ -1,14 +1,12 @@
-#include "SFML/Window/Event.hpp"
+#include "SFML/Graphics/Color.hpp"
 #include "game.hpp"
 #include <SFML/Graphics.hpp>
 
 int main() {
-
     Game game;
 
     sf::Clock clock;
     sf::Time elapsed;
-
     float frametime = 1.0f / 60.0f;
 
     while (game.window.isOpen()) {
@@ -30,10 +28,9 @@ int main() {
         elapsed += clock.restart();
 
         // 3. 渲染
-        game.window.clear();
+        game.window.clear(sf::Color::White);
         game.render();
         game.window.display();
     }
-
     return 0;
 }
